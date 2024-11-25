@@ -1,0 +1,242 @@
+[
+  {
+    "action": "Conquer Enemy Fortress",
+    "cost": { "peasants": 10, "coins": 50, "scrolls": 5 },
+    "rewards": { "skill_points": { "Fear": 6 }, "coins": 100 },
+    "success_rate": {
+      "Fear": 0.9,
+      "Magic": 0.6,
+      "Trading": 0.5,
+      "Wisdom": 0.7
+    },
+    "time": 1200
+  },
+  {
+    "action": "Master Forbidden Magic",
+    "cost": { "peasants": 3, "coins": 40, "scrolls": 8 },
+    "rewards": { "skill_points": { "Magic": 8 }, "scrolls": 5 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.9,
+      "Trading": 0.4,
+      "Wisdom": 0.6
+    },
+    "time": 1000
+  },
+  {
+    "action": "Broker a Peace Treaty",
+    "cost": { "peasants": 5, "coins": 60, "scrolls": 4 },
+    "rewards": { "skill_points": { "Trading": 6, "Wisdom": 3 }, "coins": 80 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.4,
+      "Trading": 0.9,
+      "Wisdom": 0.8
+    },
+    "time": 1100
+  },
+  {
+    "action": "Rescue the Royal Heir",
+    "cost": { "peasants": 8, "coins": 50, "scrolls": 3 },
+    "rewards": { "skill_points": { "Wisdom": 5 }, "peasants": 4, "coins": 70 },
+    "success_rate": {
+      "Fear": 0.7,
+      "Magic": 0.5,
+      "Trading": 0.5,
+      "Wisdom": 0.8
+    },
+    "time": 1300
+  },
+  {
+    "action": "Seal the Ancient Portal",
+    "cost": { "peasants": 4, "coins": 30, "scrolls": 10 },
+    "rewards": { "skill_points": { "Magic": 7 }, "scrolls": 5 },
+    "success_rate": {
+      "Fear": 0.6,
+      "Magic": 0.9,
+      "Trading": 0.3,
+      "Wisdom": 0.7
+    },
+    "time": 1500
+  },
+  {
+    "action": "Train Elite Guards",
+    "cost": { "peasants": 7, "coins": 40, "scrolls": 2 },
+    "rewards": { "peasants": 10, "coins": 60 },
+    "success_rate": {
+      "Fear": 0.8,
+      "Magic": 0.5,
+      "Trading": 0.6,
+      "Wisdom": 0.7
+    },
+    "time": 1400
+  },
+  {
+    "action": "Reclaim the Dragon's Hoard",
+    "cost": { "peasants": 6, "coins": 50, "scrolls": 4 },
+    "rewards": { "skill_points": { "Fear": 6 }, "coins": 120, "scrolls": 3 },
+    "success_rate": {
+      "Fear": 0.9,
+      "Magic": 0.5,
+      "Trading": 0.4,
+      "Wisdom": 0.6
+    },
+    "time": 1600
+  },
+  {
+    "action": "Construct a Great Library",
+    "cost": { "peasants": 12, "coins": 100, "scrolls": 8 },
+    "rewards": { "skill_points": { "Wisdom": 7 }, "scrolls": 6 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.5,
+      "Trading": 0.5,
+      "Wisdom": 0.9
+    },
+    "time": 1800
+  },
+  {
+    "action": "Quell a Rebellion",
+    "cost": { "peasants": 10, "coins": 70, "scrolls": 3 },
+    "rewards": { "skill_points": { "Fear": 5, "Wisdom": 2 }, "coins": 100 },
+    "success_rate": {
+      "Fear": 0.8,
+      "Magic": 0.5,
+      "Trading": 0.6,
+      "Wisdom": 0.7
+    },
+    "time": 1500
+  },
+  {
+    "action": "Forge a Magical Weapon",
+    "cost": { "peasants": 5, "coins": 60, "scrolls": 8 },
+    "rewards": { "skill_points": { "Magic": 8 }, "coins": 70 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.9,
+      "Trading": 0.4,
+      "Wisdom": 0.7
+    },
+    "time": 1400
+  },
+  {
+    "action": "Repel a Siege",
+    "cost": { "peasants": 15, "coins": 80, "scrolls": 4 },
+    "rewards": { "skill_points": { "Fear": 7 }, "coins": 120 },
+    "success_rate": {
+      "Fear": 0.9,
+      "Magic": 0.6,
+      "Trading": 0.5,
+      "Wisdom": 0.6
+    },
+    "time": 2000
+  },
+  {
+    "action": "Discover Lost Knowledge",
+    "cost": { "peasants": 3, "coins": 30, "scrolls": 6 },
+    "rewards": { "skill_points": { "Wisdom": 8 }, "scrolls": 5 },
+    "success_rate": {
+      "Fear": 0.4,
+      "Magic": 0.7,
+      "Trading": 0.4,
+      "Wisdom": 0.9
+    },
+    "time": 1200
+  },
+  {
+    "action": "Eliminate a Rival Lord",
+    "cost": { "peasants": 7, "coins": 60, "scrolls": 2 },
+    "rewards": { "skill_points": { "Fear": 6 }, "coins": 90 },
+    "success_rate": {
+      "Fear": 0.9,
+      "Magic": 0.5,
+      "Trading": 0.6,
+      "Wisdom": 0.5
+    },
+    "time": 1500
+  },
+  {
+    "action": "Summon a Spirit Guide",
+    "cost": { "peasants": 2, "coins": 40, "scrolls": 10 },
+    "rewards": { "skill_points": { "Magic": 9 }, "scrolls": 4 },
+    "success_rate": {
+      "Fear": 0.4,
+      "Magic": 0.9,
+      "Trading": 0.3,
+      "Wisdom": 0.7
+    },
+    "time": 1300
+  },
+  {
+    "action": "Lead a Naval Expedition",
+    "cost": { "peasants": 8, "coins": 70, "scrolls": 4 },
+    "rewards": { "skill_points": { "Trading": 6, "Wisdom": 3 }, "coins": 100 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.4,
+      "Trading": 0.9,
+      "Wisdom": 0.8
+    },
+    "time": 1600
+  },
+  {
+    "action": "Destroy the Lich's Phylactery",
+    "cost": { "peasants": 5, "coins": 50, "scrolls": 8 },
+    "rewards": { "skill_points": { "Magic": 8, "Fear": 4 }, "coins": 80 },
+    "success_rate": {
+      "Fear": 0.8,
+      "Magic": 0.9,
+      "Trading": 0.3,
+      "Wisdom": 0.6
+    },
+    "time": 2000
+  },
+  {
+    "action": "Restore the Sacred Grove",
+    "cost": { "peasants": 6, "coins": 60, "scrolls": 6 },
+    "rewards": { "skill_points": { "Wisdom": 8 }, "scrolls": 5, "coins": 90 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.7,
+      "Trading": 0.4,
+      "Wisdom": 0.9
+    },
+    "time": 1800
+  },
+  {
+    "action": "Establish a Kingdom",
+    "cost": { "peasants": 20, "coins": 150, "scrolls": 10 },
+    "rewards": { "skill_points": { "Wisdom": 10, "Trading": 5 }, "coins": 200 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.6,
+      "Trading": 0.9,
+      "Wisdom": 0.9
+    },
+    "time": 2500
+  },
+  {
+    "action": "Explore the Dark Abyss",
+    "cost": { "peasants": 4, "coins": 50, "scrolls": 12 },
+    "rewards": { "skill_points": { "Magic": 9 }, "scrolls": 6 },
+    "success_rate": {
+      "Fear": 0.7,
+      "Magic": 0.9,
+      "Trading": 0.3,
+      "Wisdom": 0.8
+    },
+    "time": 1900
+  },
+  {
+    "action": "Pacify a Cursed Land",
+    "cost": { "peasants": 8, "coins": 70, "scrolls": 5 },
+    "rewards": { "skill_points": { "Wisdom": 8, "Magic": 5 }, "coins": 120 },
+    "success_rate": {
+      "Fear": 0.6,
+      "Magic": 0.8,
+      "Trading": 0.5,
+      "Wisdom": 0.9
+    },
+    "time": 2000
+  }
+]

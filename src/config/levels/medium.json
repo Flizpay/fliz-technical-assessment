@@ -1,0 +1,242 @@
+[
+  {
+    "action": "Defend the Village",
+    "cost": { "peasants": 5, "coins": 20, "scrolls": 2 },
+    "rewards": { "skill_points": { "Fear": 3 }, "coins": 30, "scrolls": 2 },
+    "success_rate": {
+      "Fear": 0.7,
+      "Magic": 0.6,
+      "Trading": 0.5,
+      "Wisdom": 0.7
+    },
+    "time": 600
+  },
+  {
+    "action": "Negotiate with Traders",
+    "cost": { "peasants": 3, "coins": 15, "scrolls": 1 },
+    "rewards": { "skill_points": { "Trading": 3 }, "coins": 25 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.5,
+      "Trading": 0.8,
+      "Wisdom": 0.6
+    },
+    "time": 500
+  },
+  {
+    "action": "Scout Enemy Camp",
+    "cost": { "peasants": 4, "coins": 25, "scrolls": 3 },
+    "rewards": { "skill_points": { "Fear": 2 }, "coins": 40 },
+    "success_rate": {
+      "Fear": 0.8,
+      "Magic": 0.4,
+      "Trading": 0.6,
+      "Wisdom": 0.5
+    },
+    "time": 700
+  },
+  {
+    "action": "Collect Ancient Relics",
+    "cost": { "peasants": 2, "coins": 15, "scrolls": 2 },
+    "rewards": { "skill_points": { "Magic": 4 }, "scrolls": 3 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.7,
+      "Trading": 0.4,
+      "Wisdom": 0.6
+    },
+    "time": 600
+  },
+  {
+    "action": "Fortify the Outpost",
+    "cost": { "peasants": 6, "coins": 30, "scrolls": 1 },
+    "rewards": { "skill_points": { "Wisdom": 3 }, "coins": 50 },
+    "success_rate": {
+      "Fear": 0.6,
+      "Magic": 0.5,
+      "Trading": 0.5,
+      "Wisdom": 0.8
+    },
+    "time": 800
+  },
+  {
+    "action": "Hunt Dangerous Beasts",
+    "cost": { "peasants": 5, "coins": 25, "scrolls": 0 },
+    "rewards": { "skill_points": { "Fear": 3 }, "coins": 35, "peasants": 2 },
+    "success_rate": {
+      "Fear": 0.8,
+      "Magic": 0.4,
+      "Trading": 0.5,
+      "Wisdom": 0.6
+    },
+    "time": 700
+  },
+  {
+    "action": "Rescue Lost Villagers",
+    "cost": { "peasants": 3, "coins": 20, "scrolls": 1 },
+    "rewards": { "skill_points": { "Wisdom": 2 }, "coins": 30 },
+    "success_rate": {
+      "Fear": 0.6,
+      "Magic": 0.4,
+      "Trading": 0.5,
+      "Wisdom": 0.7
+    },
+    "time": 600
+  },
+  {
+    "action": "Study Magical Runes",
+    "cost": { "peasants": 2, "coins": 15, "scrolls": 4 },
+    "rewards": { "skill_points": { "Magic": 5 }, "scrolls": 2 },
+    "success_rate": {
+      "Fear": 0.4,
+      "Magic": 0.8,
+      "Trading": 0.3,
+      "Wisdom": 0.6
+    },
+    "time": 700
+  },
+  {
+    "action": "Form Alliances",
+    "cost": { "peasants": 4, "coins": 40, "scrolls": 3 },
+    "rewards": { "skill_points": { "Trading": 4 }, "coins": 50 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.5,
+      "Trading": 0.8,
+      "Wisdom": 0.6
+    },
+    "time": 800
+  },
+  {
+    "action": "Construct a Watchtower",
+    "cost": { "peasants": 8, "coins": 50, "scrolls": 2 },
+    "rewards": { "skill_points": { "Wisdom": 3 }, "coins": 60 },
+    "success_rate": {
+      "Fear": 0.6,
+      "Magic": 0.4,
+      "Trading": 0.6,
+      "Wisdom": 0.8
+    },
+    "time": 1000
+  },
+  {
+    "action": "Search for Rare Ingredients",
+    "cost": { "peasants": 3, "coins": 20, "scrolls": 2 },
+    "rewards": { "skill_points": { "Magic": 3 }, "scrolls": 2 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.7,
+      "Trading": 0.4,
+      "Wisdom": 0.5
+    },
+    "time": 600
+  },
+  {
+    "action": "Survey the Kingdom",
+    "cost": { "peasants": 5, "coins": 35, "scrolls": 1 },
+    "rewards": { "skill_points": { "Wisdom": 3 }, "coins": 40 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.5,
+      "Trading": 0.5,
+      "Wisdom": 0.8
+    },
+    "time": 700
+  },
+  {
+    "action": "Reclaim Lost Territory",
+    "cost": { "peasants": 7, "coins": 40, "scrolls": 2 },
+    "rewards": { "skill_points": { "Fear": 4 }, "coins": 50 },
+    "success_rate": {
+      "Fear": 0.7,
+      "Magic": 0.4,
+      "Trading": 0.6,
+      "Wisdom": 0.6
+    },
+    "time": 800
+  },
+  {
+    "action": "Investigate the Ruins",
+    "cost": { "peasants": 3, "coins": 25, "scrolls": 3 },
+    "rewards": { "skill_points": { "Magic": 4 }, "scrolls": 3 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.8,
+      "Trading": 0.4,
+      "Wisdom": 0.7
+    },
+    "time": 700
+  },
+  {
+    "action": "Build a Trading Post",
+    "cost": { "peasants": 6, "coins": 50, "scrolls": 1 },
+    "rewards": { "skill_points": { "Trading": 4 }, "coins": 70 },
+    "success_rate": {
+      "Fear": 0.4,
+      "Magic": 0.4,
+      "Trading": 0.8,
+      "Wisdom": 0.6
+    },
+    "time": 900
+  },
+  {
+    "action": "Escort a Diplomat",
+    "cost": { "peasants": 5, "coins": 30, "scrolls": 0 },
+    "rewards": { "skill_points": { "Trading": 2, "Wisdom": 2 }, "coins": 50 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.5,
+      "Trading": 0.7,
+      "Wisdom": 0.7
+    },
+    "time": 800
+  },
+  {
+    "action": "Defeat Bandits",
+    "cost": { "peasants": 6, "coins": 40, "scrolls": 1 },
+    "rewards": { "skill_points": { "Fear": 4 }, "coins": 60 },
+    "success_rate": {
+      "Fear": 0.8,
+      "Magic": 0.4,
+      "Trading": 0.6,
+      "Wisdom": 0.5
+    },
+    "time": 900
+  },
+  {
+    "action": "Train the Militia",
+    "cost": { "peasants": 4, "coins": 25, "scrolls": 2 },
+    "rewards": { "peasants": 6, "coins": 30 },
+    "success_rate": {
+      "Fear": 0.7,
+      "Magic": 0.4,
+      "Trading": 0.5,
+      "Wisdom": 0.6
+    },
+    "time": 700
+  },
+  {
+    "action": "Decode Secret Messages",
+    "cost": { "peasants": 2, "coins": 20, "scrolls": 5 },
+    "rewards": { "skill_points": { "Magic": 5 }, "scrolls": 2 },
+    "success_rate": {
+      "Fear": 0.4,
+      "Magic": 0.8,
+      "Trading": 0.3,
+      "Wisdom": 0.6
+    },
+    "time": 800
+  },
+  {
+    "action": "Retrieve Stolen Goods",
+    "cost": { "peasants": 3, "coins": 20, "scrolls": 1 },
+    "rewards": { "skill_points": { "Fear": 2 }, "coins": 30 },
+    "success_rate": {
+      "Fear": 0.6,
+      "Magic": 0.5,
+      "Trading": 0.5,
+      "Wisdom": 0.7
+    },
+    "time": 600
+  }
+]

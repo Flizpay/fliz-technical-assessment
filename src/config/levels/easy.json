@@ -1,0 +1,242 @@
+[
+  {
+    "action": "Explore the Woods",
+    "cost": { "peasants": 2, "coins": 10, "scrolls": 1 },
+    "rewards": { "skill_points": { "Wisdom": 2 }, "coins": 15, "scrolls": 1 },
+    "success_rate": {
+      "Fear": 0.6,
+      "Magic": 0.5,
+      "Trading": 0.4,
+      "Wisdom": 0.8
+    },
+    "time": 300
+  },
+  {
+    "action": "Help Roberto, the lost Villager",
+    "cost": { "peasants": 1, "coins": 5, "scrolls": 0 },
+    "rewards": { "skill_points": { "Trading": 1 }, "coins": 8 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.4,
+      "Trading": 0.7,
+      "Wisdom": 0.6
+    },
+    "time": 200
+  },
+  {
+    "action": "Harvest Michel's Crops",
+    "cost": { "peasants": 3, "coins": 8, "scrolls": 0 },
+    "rewards": { "coins": 15, "peasants": 2 },
+    "success_rate": {
+      "Fear": 0.4,
+      "Magic": 0.3,
+      "Trading": 0.7,
+      "Wisdom": 0.6
+    },
+    "time": 400
+  },
+  {
+    "action": "Clean Oleg's Shrine",
+    "cost": { "peasants": 2, "coins": 10, "scrolls": 1 },
+    "rewards": { "skill_points": { "Magic": 2 }, "coins": 10 },
+    "success_rate": {
+      "Fear": 0.4,
+      "Magic": 0.6,
+      "Trading": 0.5,
+      "Wisdom": 0.7
+    },
+    "time": 350
+  },
+  {
+    "action": "Repair Carlo's Bridge",
+    "cost": { "peasants": 4, "coins": 20, "scrolls": 0 },
+    "rewards": { "skill_points": { "Trading": 2 }, "coins": 30 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.4,
+      "Trading": 0.8,
+      "Wisdom": 0.6
+    },
+    "time": 450
+  },
+  {
+    "action": "Scout the River",
+    "cost": { "peasants": 1, "coins": 8, "scrolls": 1 },
+    "rewards": { "skill_points": { "Wisdom": 1 }, "coins": 10 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.4,
+      "Trading": 0.5,
+      "Wisdom": 0.7
+    },
+    "time": 250
+  },
+  {
+    "action": "Train Peasants",
+    "cost": { "peasants": 3, "coins": 12, "scrolls": 2 },
+    "rewards": { "peasants": 4, "coins": 15 },
+    "success_rate": {
+      "Fear": 0.6,
+      "Magic": 0.5,
+      "Trading": 0.6,
+      "Wisdom": 0.7
+    },
+    "time": 300
+  },
+  {
+    "action": "Search for Herbs",
+    "cost": { "peasants": 1, "coins": 6, "scrolls": 0 },
+    "rewards": { "skill_points": { "Magic": 1 }, "coins": 10 },
+    "success_rate": {
+      "Fear": 0.3,
+      "Magic": 0.5,
+      "Trading": 0.4,
+      "Wisdom": 0.8
+    },
+    "time": 200
+  },
+  {
+    "action": "Patrol the Village",
+    "cost": { "peasants": 3, "coins": 15, "scrolls": 0 },
+    "rewards": { "skill_points": { "Fear": 1 }, "coins": 20 },
+    "success_rate": {
+      "Fear": 0.7,
+      "Magic": 0.4,
+      "Trading": 0.5,
+      "Wisdom": 0.5
+    },
+    "time": 400
+  },
+  {
+    "action": "Collect Firewood",
+    "cost": { "peasants": 2, "coins": 5, "scrolls": 0 },
+    "rewards": { "coins": 8, "peasants": 1 },
+    "success_rate": {
+      "Fear": 0.4,
+      "Magic": 0.3,
+      "Trading": 0.6,
+      "Wisdom": 0.5
+    },
+    "time": 250
+  },
+  {
+    "action": "Build Shelter",
+    "cost": { "peasants": 4, "coins": 15, "scrolls": 1 },
+    "rewards": { "skill_points": { "Trading": 2 }, "coins": 20 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.4,
+      "Trading": 0.7,
+      "Wisdom": 0.6
+    },
+    "time": 500
+  },
+  {
+    "action": "Help a Farmer",
+    "cost": { "peasants": 2, "coins": 10, "scrolls": 0 },
+    "rewards": { "skill_points": { "Wisdom": 1 }, "coins": 15 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.4,
+      "Trading": 0.5,
+      "Wisdom": 0.8
+    },
+    "time": 350
+  },
+  {
+    "action": "Visit the Merchant",
+    "cost": { "peasants": 1, "coins": 10, "scrolls": 1 },
+    "rewards": { "skill_points": { "Trading": 1 }, "coins": 12 },
+    "success_rate": {
+      "Fear": 0.4,
+      "Magic": 0.3,
+      "Trading": 0.6,
+      "Wisdom": 0.5
+    },
+    "time": 300
+  },
+  {
+    "action": "Explore Ancient Ruins",
+    "cost": { "peasants": 3, "coins": 20, "scrolls": 2 },
+    "rewards": { "skill_points": { "Magic": 3 }, "scrolls": 1 },
+    "success_rate": {
+      "Fear": 0.4,
+      "Magic": 0.7,
+      "Trading": 0.5,
+      "Wisdom": 0.6
+    },
+    "time": 600
+  },
+  {
+    "action": "Gather Supplies",
+    "cost": { "peasants": 2, "coins": 8, "scrolls": 0 },
+    "rewards": { "coins": 12, "peasants": 1 },
+    "success_rate": {
+      "Fear": 0.3,
+      "Magic": 0.4,
+      "Trading": 0.5,
+      "Wisdom": 0.6
+    },
+    "time": 300
+  },
+  {
+    "action": "Hunt Small Game",
+    "cost": { "peasants": 1, "coins": 5, "scrolls": 0 },
+    "rewards": { "peasants": 2, "coins": 10 },
+    "success_rate": {
+      "Fear": 0.5,
+      "Magic": 0.3,
+      "Trading": 0.5,
+      "Wisdom": 0.7
+    },
+    "time": 250
+  },
+  {
+    "action": "Guard the Caravan",
+    "cost": { "peasants": 3, "coins": 15, "scrolls": 1 },
+    "rewards": { "skill_points": { "Fear": 2 }, "coins": 20 },
+    "success_rate": {
+      "Fear": 0.7,
+      "Magic": 0.4,
+      "Trading": 0.6,
+      "Wisdom": 0.5
+    },
+    "time": 400
+  },
+  {
+    "action": "Inspect the Well",
+    "cost": { "peasants": 1, "coins": 6, "scrolls": 0 },
+    "rewards": { "skill_points": { "Wisdom": 1 }, "coins": 8 },
+    "success_rate": {
+      "Fear": 0.4,
+      "Magic": 0.3,
+      "Trading": 0.4,
+      "Wisdom": 0.8
+    },
+    "time": 200
+  },
+  {
+    "action": "Map the Forest",
+    "cost": { "peasants": 2, "coins": 12, "scrolls": 1 },
+    "rewards": { "skill_points": { "Wisdom": 2 }, "coins": 18 },
+    "success_rate": {
+      "Fear": 0.6,
+      "Magic": 0.5,
+      "Trading": 0.5,
+      "Wisdom": 0.9
+    },
+    "time": 400
+  },
+  {
+    "action": "Watch for Bandits",
+    "cost": { "peasants": 4, "coins": 15, "scrolls": 0 },
+    "rewards": { "skill_points": { "Fear": 3 }, "coins": 25 },
+    "success_rate": {
+      "Fear": 0.8,
+      "Magic": 0.4,
+      "Trading": 0.6,
+      "Wisdom": 0.5
+    },
+    "time": 500
+  }
+]
