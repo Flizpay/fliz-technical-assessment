@@ -6,10 +6,14 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 import RegisterModel from "./models/Register.js";
+import User from "./models/User.js";
+import { OAuth2Client } from "google-auth-library";
 
 dotenv.config();
 
 const JWT_SECRET = "afnowieuojnvaoiniofojwe0e";
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+const client = new OAuth2Client(GOOGLE_CLIENT_ID);
 
 const app = express();
 app.use(
@@ -124,6 +128,42 @@ app.get("/api/user", async (req, res) => {
     }
   } catch (error) {
     console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+app.post("/api/google-login", async (req, res) => {
+  const { token } = req.body;
+  try {
+    const ticket = await client.verifyIdToken({
+      idToken: token,
+      audience: GOOGLE_CLIENT_ID,
+    });
+    const { email, name, sub: googleId } = ticket.getPayload();
+
+    let user = await User.findOne({ googleId });
+    if (!user) {
+      user = await User.create({
+        email,
+        username: name,
+        googleId,
+        nickname: name,
+        house: "defaultHouse", // or any default value
+      });
+    }
+
+    const jwtToken = jwt.sign(
+      {
+        email: user.email,
+        id: user._id,
+      },
+      JWT_SECRET,
+      {}
+    );
+
+    res.json({ token: jwtToken });
+  } catch (error) {
+    console.error("Error during Google login:", error);
     res.status(500).json({ message: "Server error" });
   }
 });
