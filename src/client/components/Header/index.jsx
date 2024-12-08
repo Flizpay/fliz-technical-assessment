@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../components/index";
 
-// Constants for house flags
 const HOUSE_FLAGS = [
   {
     house: "Stark",
@@ -41,17 +41,11 @@ const HOUSE_FLAGS = [
   },
 ];
 
-/**
- * Finds and returns the flag for a given house.
- * @param {string} houseName - The name of the house to find the flag for.
- * @returns {string | null} The URL of the house flag or null if not found.
- */
 const getHouseFlag = (houseName) => {
   const house = HOUSE_FLAGS.find(({ house }) => house === houseName);
   return house ? house.flag : null;
 };
 
-// Styles for the Header component
 const HeaderStyles = {
   container: {
     textAlign: "center",
@@ -65,21 +59,36 @@ const HeaderStyles = {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    gap: "10px", // Slightly increased for better spacing
+    gap: "10px",
   },
   userAvatar: {
     width: "50px",
     height: "50px",
     borderRadius: "50%",
   },
+  logoutButton: {
+    marginLeft: "20px",
+    padding: "10px 20px",
+    backgroundColor: "#f44336",
+    color: "white",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+  },
 };
 
 export const Header = () => {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
-  if (!user) return null; // Early return for better readability and avoiding nested conditions
+  if (!user) return null;
 
   const houseFlag = getHouseFlag(user.house);
+
+  const handleLogout = () => {
+    setUser(null);
+    navigate("/");
+  };
 
   return (
     <header className="header" style={HeaderStyles.container}>
@@ -94,6 +103,9 @@ export const Header = () => {
         <div>
           {user.name} <span>of house</span> {user.house}
         </div>
+        <button style={HeaderStyles.logoutButton} onClick={handleLogout}>
+          Logout
+        </button>
       </div>
     </header>
   );

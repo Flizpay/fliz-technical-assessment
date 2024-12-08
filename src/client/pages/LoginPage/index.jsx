@@ -21,8 +21,9 @@ export const LoginPage = () => {
         password,
       });
       if (data.success) {
-        setUser(data);
-        console.log("User logged in successfully:", data);
+        const profileResponse = await axios.get("/api/profile");
+        setUser(profileResponse.data);
+        console.log("User logged in successfully:", profileResponse.data);
         navigate("/game");
       } else {
         setErrorMessage(ERROR_MESSAGE);
