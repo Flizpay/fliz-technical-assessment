@@ -6,8 +6,12 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 import RegisterModel from "./models/Register.js";
-import User from "./models/User.js";
+import UserModel from "./models/User.js";
+import AdventureModel from "./models/adventure.js";
 import { OAuth2Client } from "google-auth-library";
+
+import fs from "fs";
+import path from "path";
 
 dotenv.config();
 
@@ -32,6 +36,61 @@ mongoose
   })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
+
+// Read JSON files
+const easyAdventures = JSON.parse(
+  fs.readFileSync(path.resolve("src/config/levels/easy.json"), "utf-8")
+);
+const mediumAdventures = JSON.parse(
+  fs.readFileSync(path.resolve("src/config/levels/medium.json"), "utf-8")
+);
+const hardAdventures = JSON.parse(
+  fs.readFileSync(path.resolve("src/config/levels/hard.json"), "utf-8")
+);
+
+// Initialize a new game for a user
+app.post("/api/initialize-game", async (req, res) => {
+  const { userId } = req.body;
+
+  try {
+    // Fetch the user
+    const user = await UserModel.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // Initialize resources and skills
+    user.resources = {
+      coins: 100,
+      peasants: 20,
+      scrolls: 10,
+    };
+    user.skills = {
+      fear: 0,
+      magic: 0,
+      trading: 0,
+      wisdom: 0,
+    };
+
+    // Generate the first set of 20 adventures
+    const adventures = [
+      ...easyAdventures.slice(0, 5),
+      ...mediumAdventures.slice(0, 10),
+      ...hardAdventures.slice(0, 5),
+    ];
+
+    // Save the adventures to the user's profile
+    user.adventures = adventures;
+
+    // Save the updated user
+    await user.save();
+
+    res.json({ message: "Game initialized successfully", user });
+  } catch (error) {
+    console.error("Error initializing game:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
 
 app.post("/api/register", async (req, res) => {
   const { house, nickname, name, email, password } = req.body;
@@ -141,9 +200,9 @@ app.post("/api/google-login", async (req, res) => {
     });
     const { email, name, sub: googleId } = ticket.getPayload();
 
-    let user = await User.findOne({ googleId });
+    let user = await UserModel.findOne({ googleId });
     if (!user) {
-      user = await User.create({
+      user = await UserModel.create({
         email,
         username: name,
         googleId,
@@ -164,6 +223,18 @@ app.post("/api/google-login", async (req, res) => {
     res.json({ token: jwtToken });
   } catch (error) {
     console.error("Error during Google login:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+app.get("/api/adventures", async (req, res) => {
+  try {
+    const adventures = await AdventureModel.aggregate([
+      { $sample: { size: 5 } },
+    ]);
+    res.json(adventures);
+  } catch (error) {
+    console.error("Error fetching adventures:", error);
     res.status(500).json({ message: "Server error" });
   }
 });

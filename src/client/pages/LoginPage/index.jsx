@@ -29,15 +29,7 @@ export const LoginPage = () => {
       }
     } catch (error) {
       console.error("User login failed:", error);
-      if (
-        error.response &&
-        error.response.data &&
-        error.response.data.message
-      ) {
-        setErrorMessage(error.response.data.message);
-      } else {
-        setErrorMessage(ERROR_MESSAGE);
-      }
+      setErrorMessage(error?.response?.data?.message || ERROR_MESSAGE);
     }
   }
 
