@@ -1,0 +1,104 @@
+:root {
+  --primary-color: #f44336;
+  --text-color: #000;
+  --border-radius: 16px;
+  --box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border: 1px solid grey;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  height: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.userAvatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.logoutButton {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logoutButton:hover {
+  background-color: #d32f2f;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 1.5rem;
+  height: 0.2rem;
+  background-color: var(--text-color);
+  margin: 0.2rem 0;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.resources,
+.skills {
+  display: flex;
+  gap: 1rem;
+  color: var(--text-color);
+}
+
+.container.expanded .menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  box-shadow: var(--box-shadow);
+  z-index: 1;
+}
+
+.container.expanded .resources,
+.container.expanded .skills {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

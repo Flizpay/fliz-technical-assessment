@@ -276,7 +276,7 @@ app.post("/api/google-login", async (req, res) => {
 app.get("/api/adventures", async (req, res) => {
   try {
     const adventures = await AdventureModel.aggregate([
-      { $sample: { size: 5 } },
+      { $sample: { size: 25 } }, // Fetch 25 random adventures
     ]);
     res.json(adventures);
   } catch (error) {

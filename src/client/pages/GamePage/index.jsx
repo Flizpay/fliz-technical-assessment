@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Header, Loader } from "../../components/index";
+import { MapGrid } from "../../components/MapGrid";
 
 export const GamePage = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [score, setScore] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -13,10 +13,6 @@ export const GamePage = () => {
     return () => clearTimeout(timer); // Cleanup the timer
   }, []);
 
-  const handleAttack = () => {
-    setScore(score + 10);
-  };
-
   return (
     <div style={{ textAlign: "center", padding: "50px" }}>
       {isLoading ? (
@@ -25,8 +21,7 @@ export const GamePage = () => {
         <div>
           <Header />
           <h1>Game of Empires</h1>
-          <p>Score: {score}</p>
-          <button onClick={handleAttack}>Attack</button>
+          <MapGrid />
         </div>
       )}
     </div>
