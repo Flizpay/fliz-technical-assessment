@@ -1,6 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../components/index";
+
+import "./styles.css";
 
 const HOUSE_FLAGS = [
   {
@@ -46,52 +48,11 @@ const getHouseFlag = (houseName) => {
   return house ? house.flag : null;
 };
 
-const HeaderStyles = {
-  container: {
-    textAlign: "center",
-    padding: "50px",
-    border: "1px solid grey",
-    borderRadius: "16px",
-    boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-  },
-  userInfo: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "10px",
-  },
-  userAvatar: {
-    width: "50px",
-    height: "50px",
-    borderRadius: "50%",
-  },
-  logoutButton: {
-    marginLeft: "20px",
-    padding: "10px 20px",
-    backgroundColor: "#f44336",
-    color: "white",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-  },
-  resources: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    marginTop: "10px",
-  },
-  skills: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    marginTop: "10px",
-  },
-};
-
 export const Header = () => {
   const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+  const [isSkillsOpen, setIsSkillsOpen] = useState(false);
 
   if (!user) return null;
 
@@ -102,35 +63,61 @@ export const Header = () => {
     navigate("/");
   };
 
+  const handleResourcesToggle = () => {
+    setIsResourcesOpen(!isResourcesOpen);
+  };
+
+  const handleSkillsToggle = () => {
+    setIsSkillsOpen(!isSkillsOpen);
+  };
+
   return (
-    <header className="header" style={HeaderStyles.container}>
-      <div className="user-info" style={HeaderStyles.userInfo}>
+    <header className="header">
+      <div className="userInfo">
         {houseFlag && (
           <img
             src={houseFlag}
             alt={`${user.house} flag`}
-            style={HeaderStyles.userAvatar}
+            className="userAvatar"
           />
         )}
-        <div>
+        <div className="userDetails">
           {user.name} <span>of house</span> {user.house}
         </div>
-        <button style={HeaderStyles.logoutButton} onClick={handleLogout}>
+      </div>
+      <div className="userInfo-Container">
+        <button className="toggle-button" onClick={handleResourcesToggle}>
+          {isResourcesOpen ? "Hide Resources" : "Show Resources"}
+        </button>
+        {isResourcesOpen && (
+          <div className="toggle-content">
+            <div className="resources">
+              <h3>Resources</h3>
+              <p>Coins: {user.resources.coins}</p>
+              <p>Peasants: {user.resources.peasants}</p>
+              <p>Scrolls: {user.resources.scrolls}</p>
+            </div>
+          </div>
+        )}
+
+        <button className="toggleButton" onClick={handleSkillsToggle}>
+          {isSkillsOpen ? "Hide Skills" : "Show Skills"}
+        </button>
+        {isSkillsOpen && (
+          <div className="toggleContent">
+            <div className="skills">
+              <h3>Skills</h3>
+              <p>Fear: {user.skills.fear}</p>
+              <p>Magic: {user.skills.magic}</p>
+              <p>Trading: {user.skills.trading}</p>
+              <p>Wisdom: {user.skills.wisdom}</p>
+            </div>
+          </div>
+        )}
+
+        <button className="logoutButton" onClick={handleLogout}>
           Logout
         </button>
-      </div>
-      <div className="resources" style={HeaderStyles.resources}>
-        <h3>Resources</h3>
-        <p>Coins: {user.resources.coins}</p>
-        <p>Peasants: {user.resources.peasants}</p>
-        <p>Scrolls: {user.resources.scrolls}</p>
-      </div>
-      <div className="skills" style={HeaderStyles.skills}>
-        <h3>Skills</h3>
-        <p>Fear: {user.skills.fear}</p>
-        <p>Magic: {user.skills.magic}</p>
-        <p>Trading: {user.skills.trading}</p>
-        <p>Wisdom: {user.skills.wisdom}</p>
       </div>
     </header>
   );

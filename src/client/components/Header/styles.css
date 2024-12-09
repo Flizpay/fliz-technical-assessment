@@ -5,29 +5,37 @@
   --box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.container {
+.header {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 10px;
   border: 1px solid grey;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  height: 4rem;
+  height: auto;
   position: relative;
   overflow: hidden;
 }
 
 .userInfo {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .userAvatar {
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
 }
 
 .logoutButton {
@@ -45,60 +53,53 @@
   background-color: #d32f2f;
 }
 
-.hamburger {
-  display: none;
-  flex-direction: column;
+.toggle-button,
+.toggleButton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.hamburger div {
-  width: 1.5rem;
-  height: 0.2rem;
-  background-color: var(--text-color);
-  margin: 0.2rem 0;
+.toggle-button:hover,
+.toggleButton:hover {
+  background-color: #d32f2f;
 }
 
-.menu {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.toggle-content,
+.toggleContent {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 100%;
 }
 
 .resources,
 .skills {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
   color: var(--text-color);
 }
 
-.container.expanded .menu {
+.userInfo-Container {
   display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 4rem;
-  left: 0;
-  width: 100%;
-  background-color: white;
-  border: 1px solid grey;
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
-  box-shadow: var(--box-shadow);
-  z-index: 1;
-}
-
-.container.expanded .resources,
-.container.expanded .skills {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 1rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  gap: 1rem;
 }
 
 @media (max-width: 768px) {
-  .menu {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
+  .header {
+    flex-direction: column;
   }
 }
