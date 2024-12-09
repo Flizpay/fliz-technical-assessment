@@ -75,6 +75,18 @@ const HeaderStyles = {
     borderRadius: "5px",
     cursor: "pointer",
   },
+  resources: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginTop: "10px",
+  },
+  skills: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginTop: "10px",
+  },
 };
 
 export const Header = () => {
@@ -106,6 +118,19 @@ export const Header = () => {
         <button style={HeaderStyles.logoutButton} onClick={handleLogout}>
           Logout
         </button>
+      </div>
+      <div className="resources" style={HeaderStyles.resources}>
+        <h3>Resources</h3>
+        <p>Coins: {user.resources.coins}</p>
+        <p>Peasants: {user.resources.peasants}</p>
+        <p>Scrolls: {user.resources.scrolls}</p>
+      </div>
+      <div className="skills" style={HeaderStyles.skills}>
+        <h3>Skills</h3>
+        <p>Fear: {user.skills.fear}</p>
+        <p>Magic: {user.skills.magic}</p>
+        <p>Trading: {user.skills.trading}</p>
+        <p>Wisdom: {user.skills.wisdom}</p>
       </div>
     </header>
   );

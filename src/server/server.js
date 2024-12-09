@@ -6,7 +6,6 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 import RegisterModel from "./models/Register.js";
-import UserModel from "./models/User.js";
 import AdventureModel from "./models/adventure.js";
 import { OAuth2Client } from "google-auth-library";
 
@@ -54,7 +53,7 @@ app.post("/api/initialize-game", async (req, res) => {
 
   try {
     // Fetch the user
-    const user = await UserModel.findById(userId);
+    const user = await RegisterModel.findById(userId);
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
@@ -92,6 +91,50 @@ app.post("/api/initialize-game", async (req, res) => {
   }
 });
 
+// Function to update User collection after registration
+const updateUserCollection = async (userData) => {
+  try {
+    const { house, nickname, name, email, password } = userData;
+
+    // Check if user already exists in User collection
+    let user = await RegisterModel.findOne({ email });
+    if (!user) {
+      // Create a new user if not exists
+      user = new RegisterModel({
+        house,
+        nickname,
+        name,
+        email,
+        password: bcrypt.hashSync(password, 10),
+        resources: {
+          coins: 100,
+          peasants: 20,
+          scrolls: 10,
+        },
+        skills: {
+          fear: 0,
+          magic: 0,
+          trading: 0,
+          wisdom: 0,
+        },
+      });
+    } else {
+      // Update existing user
+      user.house = house;
+      user.nickname = nickname;
+      user.name = name;
+      user.password = bcrypt.hashSync(password, 10);
+    }
+
+    // Save the user
+    await user.save();
+    return user;
+  } catch (error) {
+    console.error("Error updating User collection:", error);
+    throw new Error("Server error");
+  }
+};
+
 app.post("/api/register", async (req, res) => {
   const { house, nickname, name, email, password } = req.body;
   try {
@@ -102,6 +145,10 @@ app.post("/api/register", async (req, res) => {
       email,
       password: bcrypt.hashSync(password, 10),
     });
+
+    // Update User collection
+    await updateUserCollection(user);
+
     res.json(user);
   } catch (error) {
     console.error("Error registering user:", error);
@@ -166,8 +213,7 @@ app.get("/api/profile", async (req, res) => {
       if (!user) {
         return res.status(404).json({ message: "User not found" });
       }
-      const { house, nickname, name, email, _id } = user;
-      res.json({ house, nickname, name, email, _id, token });
+      res.json(user);
     } catch (error) {
       console.error("Error fetching user profile:", error);
       res.status(500).json({ message: "Server error" });
@@ -200,9 +246,9 @@ app.post("/api/google-login", async (req, res) => {
     });
     const { email, name, sub: googleId } = ticket.getPayload();
 
-    let user = await UserModel.findOne({ googleId });
+    let user = await RegisterModel.findOne({ googleId });
     if (!user) {
-      user = await UserModel.create({
+      user = await RegisterModel.create({
         email,
         username: name,
         googleId,
