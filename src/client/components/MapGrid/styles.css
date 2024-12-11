@@ -7,7 +7,7 @@
   grid-template-rows: repeat(10, 1fr);
   gap: 10px;
   padding: 20px;
-  background-image: url(../../assets/images/map.gif);
+  background-image: url(../../../assets/images/map.gif);
   position: relative;
   background-size: fit-to-screen;
   background-position: center;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./MapGrid.css";
+import "./styles.css";
 
 const GRID_SIZE = 10;
 

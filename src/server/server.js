@@ -36,7 +36,6 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
-// Read JSON files
 const easyAdventures = JSON.parse(
   fs.readFileSync(path.resolve("src/config/levels/easy.json"), "utf-8")
 );
@@ -52,13 +51,11 @@ app.post("/api/initialize-game", async (req, res) => {
   const { userId } = req.body;
 
   try {
-    // Fetch the user
     const user = await RegisterModel.findById(userId);
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    // Initialize resources and skills
     user.resources = {
       coins: 100,
       peasants: 20,
@@ -78,10 +75,8 @@ app.post("/api/initialize-game", async (req, res) => {
       ...hardAdventures.slice(0, 5),
     ];
 
-    // Save the adventures to the user's profile
     user.adventures = adventures;
 
-    // Save the updated user
     await user.save();
 
     res.json({ message: "Game initialized successfully", user });
@@ -95,11 +90,8 @@ app.post("/api/initialize-game", async (req, res) => {
 const updateUserCollection = async (userData) => {
   try {
     const { house, nickname, name, email, password } = userData;
-
-    // Check if user already exists in User collection
     let user = await RegisterModel.findOne({ email });
     if (!user) {
-      // Create a new user if not exists
       user = new RegisterModel({
         house,
         nickname,
@@ -119,14 +111,12 @@ const updateUserCollection = async (userData) => {
         },
       });
     } else {
-      // Update existing user
       user.house = house;
       user.nickname = nickname;
       user.name = name;
       user.password = bcrypt.hashSync(password, 10);
     }
 
-    // Save the user
     await user.save();
     return user;
   } catch (error) {
@@ -146,7 +136,6 @@ app.post("/api/register", async (req, res) => {
       password: bcrypt.hashSync(password, 10),
     });
 
-    // Update User collection
     await updateUserCollection(user);
 
     res.json(user);
@@ -187,7 +176,7 @@ app.post("/api/login", async (req, res) => {
         (err, token) => {
           if (err) throw err;
           res
-            .cookie("token", token, { sameSite: "None", secure: true }) // ensure secure option is set
+            .cookie("token", token, { sameSite: "None", secure: true })
             .json({ success: true, message: "Password matches!" });
         }
       );

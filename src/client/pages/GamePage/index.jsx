@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Header, Loader } from "../../components/index";
-import { MapGrid } from "../../components/MapGrid";
+import { Header, Loader, MapGrid } from "../../components/index";
 
 export const GamePage = () => {
   const [isLoading, setIsLoading] = useState(true);
