@@ -1,0 +1,45 @@
+.map-grid {
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 10px;
+  padding: 20px;
+  background-image: url(../../../assets/images/map.gif);
+  position: relative;
+  background-size: fit-to-screen;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  margin-right: 0;
+  overflow-x: hidden;
+}
+
+.map-grid-item {
+  position: absolute;
+  cursor: pointer;
+}
+
+.adventure-marker {
+  width: 100%;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: green;
+}
+
+.adventure-details {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

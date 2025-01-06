@@ -1,0 +1,105 @@
+:root {
+  --primary-color: #f44336;
+  --text-color: #000;
+  --border-radius: 16px;
+  --box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userAvatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+}
+
+.logoutButton {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logoutButton:hover {
+  background-color: #d32f2f;
+}
+
+.toggle-button,
+.toggleButton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-button:hover,
+.toggleButton:hover {
+  background-color: #d32f2f;
+}
+
+.toggle-content,
+.toggleContent {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 100%;
+}
+
+.resources,
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--text-color);
+}
+
+.userInfo-Container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+}
